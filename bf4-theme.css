@@ -2919,6 +2919,16 @@ body.bf3stats, body.mohwstats {
 .bblog-local-comment.stats textarea {
 	width: 1006px !important;  
 }
+/* border color: 434e60 */ 
+
+/*
+
+Start of Nefomemes' fork 
+
+https://nefomemes.github.io/betterfield3-bf4
+
+*/
+
 
 #main-middle .base-middle-content .campaign-launch-button, .base-button-arrow-large-drop, .base-button-general-dropdown {
 width: auto;
@@ -2936,6 +2946,8 @@ margin: 70px !important;
     background: #230d0d url(//d34ymitoc1pg7m.cloudfront.net/bf4/backgrounds/bg-video-overlay-dcc29baf.jpg) 50% 0 no-repeat !important;
     text-align: center !important;
 }
+
+
 
 .tabs-outer .tabs-container .base-big-title  {
         position: relative;
@@ -2962,5 +2974,16 @@ font-family: "Purista", sans-serif, Arial;
 
 }
 
+#footer-social {
+ 
+    display: none;
+}
 
-/* border color: 434e60 */ 
+#footer {
+    min-height: auto;
+}
+
+
+#serverbrowser-scoreboard .row {
+        display: flex;
+}
