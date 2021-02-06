@@ -12,6 +12,11 @@
 - Click enter and refresh your page.
 - Nicely done, ez pz.
 
+## CDNs
+
+- [JSdelivr](https://cdn.jsdelivr.net/npm/betterlog3-bf4@1.0.0/bf4-theme.min.css)
+
+
 ## Credits
 
 - [BF4 theme for BF3 Battlelog by Juress](https://github.com/brainfoolong/better-battlelog/blob/master/themes/bf4-theme-juress.css)
