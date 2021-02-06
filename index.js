@@ -170,7 +170,6 @@ let script = document.createElement('script');
     *
     * @param string key
     */
-    t : function(key){},
 
     /**
     * This function will be setted (injected) by the initializer
@@ -182,7 +181,7 @@ let script = document.createElement('script');
     * @param string key
     * @param mixed value Optional, if not set the function return the value instead of setting it
     */
-    cache : function(key, value){},
+   
 
     /**
     * This function will be setted (injected) by the initializer
@@ -196,5 +195,5 @@ let script = document.createElement('script');
     * @param string key
     * @param mixed value Optional, if not set the function return the value instead of setting it
     */
-    storage : function(key, value){}
+   
 });
