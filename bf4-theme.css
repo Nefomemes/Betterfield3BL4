@@ -2974,6 +2974,7 @@ font-family: "Purista", sans-serif, Arial;
     display: none;
 }
 
+
 #footer-wrapper .footer-wrapper-inner #footer {
     min-height: auto;
     background-color: transparent !important;
@@ -2985,5 +2986,30 @@ font-family: "Purista", sans-serif, Arial;
 }
 
 .submenu .active a {
-	color: black;
+	color: black !important;
 }
+
+
+
+.row-tight .span4:first-child, .row-tight .span4.alpha {
+    width: 664px;
+}
+#main-loggedin-header-puff-topstory {
+    height: 352px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    background-size: cover;
+        width: 664px;
+}
+
+.main-loggedin-header-puff-content, .main-loggedin-header-puff-overlay, .main-loggedin-header-puff-background {
+    width: 100%;
+    height: auto !important;
+}
+
+.main-loggedin-header-puff-overlay, .main-loggedin-header-puff-background {
+    background-size: cover !important;
+}
+
+
+
