@@ -35,20 +35,14 @@ BBLog.handle("add.plugin", {
     */
     translations : {
         "en" : {
-            "foo.bar" : "My Test Config Flag",
-            "foo.bar.tooltip" : "The tooltip for my foo bar flag",
-            "my.option" : "Config Flag 2",
-            "my.btn.option" : "Edit List",
-            "other.trans" : "Foo Bar"
+            "options.enableBF4bg": "Use BF4 background image",
+            "options.prod": "Use production release for secondary files.",
+           
         },
-        "de" : {
-            "foo.bar" : "Mein Test",
-            "foo.bar.tooltip" : "Der Tooltip zum Test Key",
-            "my.option" : "Config Flag 2",
-            "my.btn.option" : "Liste bearbeiten",
-            "other.trans" : "Foo Bar",
-            "plugin.name" : "Der Name meines Plugins"
-        }
+	"id": {
+		"options.enableBF4bg": "Pakai gambar latar belakang BF4.",
+		"options.prod":"Pakai keluaran Production untuk file sekunder."
+	}
     },
 
     /**
@@ -63,8 +57,8 @@ BBLog.handle("add.plugin", {
     *                       The function well be executed when the user clicks the button
     */
     configFlags : [
-        {"key" : "Enable BF4 background", "init" : 1},
-	{"key" : "Production release", 
+        {"key" : "options.enableBF4bg", "init" : 1},
+	{"key" : "options.prod", 
 	"init": 1}
      
     ],
@@ -77,21 +71,30 @@ BBLog.handle("add.plugin", {
     *    For example: If you add a new function to your addon, always pass the "instance" object
     */
     init : function(instance){
+
+	    if(document.location.startsWith("http://")){
+		    document.location = `https://${document.location.slice('http://'.length - 1)}`;
+	    }
       console.log(instance);
 
-        let fork = document.createElement('link');
-
-	fork.setAttribute("rel", "stylesheet");
+      var game = document.location.slice("https://battlelog.battlefield.com/".length - 1).split("/")[0];
 
 
-	if(instance.storage("Production release")){
-	fork.setAttribute("src", "https://cdn.jsdelivr.net/npm/betterlog-bf4/bf4-bf3-theme.min.css");
-	} else {
-		fork.setAttribute("src",
-		"https://"
-		)
-	}
-  document.head.appendChild(style);
+
+	if(game !== "bf4"){
+        instance.addFile(instance, "bf4-bf3-theme.css");
+	instance.addFile(instance, "bf4-bf3-nefomemes.css");
+    } else {
+	instance.addFile(instance, "bf4-theme.css");
+    }
+
+if(instance.storage("options.enableBF4bg") && game !== "bf4"){
+	instance.addFile(instance, "bf3-bg.css");
+}
+
+
+
+
     },
 
     /**
@@ -117,10 +120,48 @@ BBLog.handle("add.plugin", {
     *    Always use "instance" to access any plugin related function, not use "this" because it's not working properly
     *    For example: If you add a new function to your addon, always pass the "instance" object
     */
-    myOwnCustomFunc123 : function(instance){
-        alert("Hooo boy, you've clicked the button in the options. Now it's on you what you will make with this feature!");
-    },
+    getCdnUrl : function(instance, file){
+        	if(instance.storage("options.prod")){
+			let fileName = file.split(".");
+			let ext = fileName.pop();
+			fileName = fileName.join("");
 
+			let min = "";
+			if(['js', 'css'].includes(ext)){
+				min = '.min';
+			};
+			return `https://cdn.jsdelivr.net/npm/betterlog-bf4/${fileName}${min}.${ext}`;
+		} else {
+			return `https://betterlog-bf4.nefomemes.repl.co/${file}`;
+
+
+		}
+    },
+	addFile: function addFile(instance, fileName){
+		const cdnUrl = instance.getCdnUrl(instance, fileName);
+
+		if(cdnUrl.endsWith(".js")){
+let script = document.createElement('script');
+
+
+	script.setAttribute("src", cdnUrl);
+
+
+	
+  	document.head.appendChild(script);
+		} else if(cdnUrl.endsWith(".css")){
+ 	let css = document.createElement('link');
+
+	css.setAttribute("rel", "stylesheet");
+	css.setAttribute("href", cdnUrl);
+
+
+	
+  	document.head.appendChild(css);
+		} else {
+			throw Error("Not a valid file!");
+		}
+	}
     /**
     * This function will be setted (injected) by the initializer
     * This placeholder must not be implemented in your plugin,
