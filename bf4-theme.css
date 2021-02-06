@@ -2919,4 +2919,48 @@ body.bf3stats, body.mohwstats {
 .bblog-local-comment.stats textarea {
 	width: 1006px !important;  
 }
+
+#main-middle .base-middle-content .campaign-launch-button, .base-button-arrow-large-drop, .base-button-general-dropdown {
+width: auto;
+    
+    padding: 0 !important;
+    padding-left: 20px !important;
+    line-height: 32px;
+    padding-bottom: 0 !important;
+    padding-right: 20px !important;
+}
+#main-middle .base-middle-content .campaign-launch-button {
+margin: 70px !important;
+}
+#base-background {
+    background: #230d0d url(//d34ymitoc1pg7m.cloudfront.net/bf4/backgrounds/bg-video-overlay-dcc29baf.jpg) 50% 0 no-repeat !important;
+    text-align: center !important;
+}
+
+.tabs-outer .tabs-container .base-big-title  {
+        position: relative;
+    display: inline-block;
+    line-height: 39px;
+    margin: 0 0 16px 0;
+    padding: 0 16px !important;
+    font-size: 36px !important;
+    padding-top: 1px !important;
+    letter-spacing: -1px;
+    font-style: normal;
+    font-weight: 600 !important;
+}
+
+.serverguide-cell-name-server-name {
+text-transform: uppercase;
+font-family: "Purista", sans-serif, Arial;
+    
+    line-height: 16px;
+    font-size: 14px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+
 /* border color: 434e60 */ 
