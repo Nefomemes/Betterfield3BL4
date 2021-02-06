@@ -14,7 +14,8 @@
 
 ## CDNs
 
-- [JSdelivr](https://cdn.jsdelivr.net/npm/betterlog3-bf4@1.0.0/bf4-theme.min.css)
+- [JSdelivr](https://cdn.jsdelivr.net/npm/betterlog3-bf4/bf4-theme.min.css)
+- [UNPKG](https://unpkg.com/betterlog3-bf4@0.1.0/bf4-theme.css) - Unminified
 
 
 ## Credits
