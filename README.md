@@ -1,5 +1,5 @@
 # betterfield3-bf4
-[![](https://data.jsdelivr.com/v1/package/npm/betterlog3-bf4/badge)](https://www.jsdelivr.com/package/npm/betterlog3-bf4)
+[![](https://data.jsdelivr.com/v1/package/npm/betterlog3-bf4/badge)](https://www.jsdelivr.com/package/npm/betterlog3-bf4) ![GitHub top language](https://img.shields.io/github/languages/top/Nefomemes/betterlog3-bf4)
 
 An enchanced fork of [BF4 theme for BF3 BetterBattlelog by Juress](https://github.com/brainfoolong/better-battlelog/blob/master/themes/bf4-theme-juress.css)
 
