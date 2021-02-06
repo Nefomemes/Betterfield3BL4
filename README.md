@@ -1,5 +1,5 @@
 # betterfield3-bf4
-An enchanced fork of [BF4 theme for BF3 BetterBattlelog by Juress](https://github.com/brainfoolong/better-battlelog/blob/master/themes/bf4-theme-juress.css)
+An enchanced fork of [BF4 theme for BF3 BetterBattlelog](https://github.com/brainfoolong/better-battlelog/blob/master/themes/bf4-theme-juress.css)
 
 ## Installation
 
