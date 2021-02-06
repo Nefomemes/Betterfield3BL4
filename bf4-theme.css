@@ -2942,11 +2942,6 @@ width: auto;
 #main-middle .base-middle-content .campaign-launch-button {
 margin: 70px !important;
 }
-#base-background {
-    background: #230d0d url(//d34ymitoc1pg7m.cloudfront.net/bf4/backgrounds/bg-video-overlay-dcc29baf.jpg) 50% 0 no-repeat !important;
-    text-align: center !important;
-}
-
 
 
 .tabs-outer .tabs-container .base-big-title  {
@@ -2979,11 +2974,16 @@ font-family: "Purista", sans-serif, Arial;
     display: none;
 }
 
-#footer {
+#footer-wrapper .footer-wrapper-inner #footer {
     min-height: auto;
+    background-color: transparent !important;
 }
 
 
 #serverbrowser-scoreboard .row {
         display: flex;
+}
+
+.submenu .active a {
+	color: black;
 }
