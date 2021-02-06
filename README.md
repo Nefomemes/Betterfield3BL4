@@ -29,3 +29,4 @@ A minified file is much smaller in size than an unminified file. However, it's n
 ## Credits
 
 - [BF4 theme for BF3 BetterBattlelog by Juress](https://github.com/brainfoolong/better-battlelog/blob/master/themes/bf4-theme-juress.css)
+  
