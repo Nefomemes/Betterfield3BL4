@@ -39,11 +39,11 @@ BBLog.handle("add.plugin", {
             "options.prod": "Use production release for secondary files",
            "options.logEverything":"Log everything to the Chrome Devtools"
         },
-	"id": {
+	/*"id": {
 		"options.enableBF4bg": "Pakai gambar latar belakang BF4",
 		"options.prod":"Pakai keluaran Production untuk file sekunder",
 		"options.logEverything":"Log semua hal yang terjadi ke Chrome Devtools"
-	}
+	}*/
     },
 
     /**
@@ -62,7 +62,7 @@ BBLog.handle("add.plugin", {
 	{"key" : "options.prod", 
 	"init": 1},
 	{
-	"key":"options.prod",
+	"key":"options.logEverything",
 	"init": 0
 	}
      
@@ -77,12 +77,12 @@ BBLog.handle("add.plugin", {
     */
     init : function(instance){
 
-	    if(document.location.startsWith("http://")){
+	    if(document.location.href.startsWith("http://")){
 		    document.location = `https://${document.location.slice('http://'.length - 1)}`;
 	    }
       console.log(instance);
 
-      var game = document.location.slice("https://battlelog.battlefield.com/".length - 1).split("/")[0];
+      var game = document.location.href.slice("https://battlelog.battlefield.com/".length - 1).split("/")[0];
 
 
 
@@ -94,7 +94,7 @@ BBLog.handle("add.plugin", {
     }
 
 if(instance.storage("options.enableBF4bg") && game !== "bf4"){
-	instance.addFile(instance, "bf3-bg.css");
+	instance.addFile(instance, "bf4-bg.css");
 }
 
 
@@ -168,11 +168,11 @@ let script = document.createElement('script');
 		}
 	},
 
-	log: (instance, message){
+	log: (instance, message) => {
 		if(instance.storage("options.logEverything")){
 		console.log(message);
 		}
-	}
+	},
 
 
 

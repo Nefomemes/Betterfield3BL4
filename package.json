@@ -1,6 +1,6 @@
 {
   "name": "betterlog-bf4",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An enchanced fork of BF4 theme for BF3 BetterBattlelog.",
   "main": "index.js",
   "scripts": {
