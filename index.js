@@ -36,12 +36,13 @@ BBLog.handle("add.plugin", {
     translations : {
         "en" : {
             "options.enableBF4bg": "Use BF4 background image",
-            "options.prod": "Use production release for secondary files.",
-           
+            "options.prod": "Use production release for secondary files",
+           "options.logEverything":"Log everything to the Chrome Devtools"
         },
 	"id": {
-		"options.enableBF4bg": "Pakai gambar latar belakang BF4.",
-		"options.prod":"Pakai keluaran Production untuk file sekunder."
+		"options.enableBF4bg": "Pakai gambar latar belakang BF4",
+		"options.prod":"Pakai keluaran Production untuk file sekunder",
+		"options.logEverything":"Log semua hal yang terjadi ke Chrome Devtools"
 	}
     },
 
@@ -59,7 +60,11 @@ BBLog.handle("add.plugin", {
     configFlags : [
         {"key" : "options.enableBF4bg", "init" : 1},
 	{"key" : "options.prod", 
-	"init": 1}
+	"init": 1},
+	{
+	"key":"options.prod",
+	"init": 0
+	}
      
     ],
 
@@ -161,7 +166,16 @@ let script = document.createElement('script');
 		} else {
 			throw Error("Not a valid file!");
 		}
+	},
+
+	log: (instance, message){
+		if(instance.storage("options.logEverything")){
+		console.log(message);
+		}
 	}
+
+
+
     /**
     * This function will be setted (injected) by the initializer
     * This placeholder must not be implemented in your plugin,
